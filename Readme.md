@@ -74,6 +74,13 @@ For non-developers, who still want to contribute tests for the project,
 use [this page](http://libcpuid.sourceforge.net/bugreport.php) to report
 misdetections or new CPUs that libcpuid doesn't handle well yet.
 
+Python bindings
+---------------
+
+libcpuid features Python bindings, which can be installed as a library
+using `python -m pip install libcpuid`.
+See [python/README.md](python/README.md) for details.
+
 Users
 -----
 
