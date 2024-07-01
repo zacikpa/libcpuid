@@ -21,7 +21,7 @@ def _check_error(return_code: int) -> None:
         raise LibCPUIDError(c_string_to_str(lib.cpuid_error()))
 
 
-def libcpuid_version() -> str:
+def version() -> str:
     """Returns the version of the libcpuid library."""
     return c_string_to_str(lib.cpuid_lib_version())
 
