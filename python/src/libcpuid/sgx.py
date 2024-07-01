@@ -32,7 +32,7 @@ class SGX:
 
     @property
     def flags(self) -> list[enums.SGXFeature]:
-        """Returns a list of CPU SGX features"""
+        """List of CPU SGX features."""
         return [flag for flag in enums.SGXFeature if self._raw.flags[flag]]
 
     @property

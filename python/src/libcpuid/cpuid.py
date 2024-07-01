@@ -52,7 +52,7 @@ class CPUID:  # pylint: disable=too-many-public-methods
 
     @property
     def flags(self) -> list[enums.CPUFeature]:
-        """List of CPU features"""
+        """List of CPU features."""
         return [flag for flag in enums.CPUFeature if self._raw.flags[flag]]
 
     @property
