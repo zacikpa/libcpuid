@@ -33,6 +33,14 @@ class CPUID:  # pylint: disable=too-many-public-methods
             return enums.CPUArchitecture.UNKNOWN
 
     @property
+    def feature_level(self) -> enums.CPUFeatureLevel:
+        """The CPU feature level."""
+        try:
+            return enums.CPUFeatureLevel(self._raw.feature_level)
+        except ValueError:
+            return enums.CPUFeatureLevel.UNKNOWN
+
+    @property
     def vendor_str(self) -> str:
         """The CPU vendor string, e.g., :const:`'GenuineIntel'`."""
         return c_string_to_str(self._raw.vendor_str)
