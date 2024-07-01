@@ -54,7 +54,9 @@ def get_cpu_list(vendor: enums.CPUVendor) -> list[str]:
     lib.cpuid_get_cpu_list(vendor, raw_cpu_list)
     if raw_cpu_list.num_entries == 0:
         raise LibCPUIDError(c_string_to_str(lib.cpuid_error()))
-    return [
+    cpu_list = [
         c_string_to_str(name)
         for name in raw_cpu_list.names[0 : raw_cpu_list.num_entries]
     ]
+    lib.cpuid_free_cpu_list(raw_cpu_list)
+    return cpu_list
